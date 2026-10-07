@@ -1,0 +1,55 @@
+
+/* linki*/
+.link-cw1 {
+    color: green;
+}
+
+.link-cw2 {
+    color: blue;
+}
+
+.link-cw3 {
+    color: purple;
+}
+/* Cw1*/
+.autor {
+    color: #ff5733;
+    font-weight: bold;
+}
+/* Cw2 */
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* Cw3*/
+.wiersz {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.kwadrat {
+    width: 100px;
+    height: 100px;
+}
+
+.kolor1 {
+    background-color: red;
+}
+
+.kolor2 {
+    background-color: blue;
+}
+
+.kolor3 {
+    background-color: green;
+}
+
+.kolor4 {
+    background-color: yellow;
+}
