@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Alien Gambit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Alien Gambit <span>Caro-Kann</span></a>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="gallery.html" class="nav-link">Galeria</a></li>
+          <li><a href="contact.html" class="nav-link active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="section-head">
+      <h2>Kontakt i zgłoszenia partii</h2>
+      <p>Wyślij swoją partię z wariantu Alien Gambit albo uwagi do opisanych ruchów.</p>
+    </div>
+
+    <div class="contact-grid">
+      <aside class="panel">
+        <h3>Ściągawka notacji szachowej</h3>
+        <p style="color: var(--muted); font-size: 0.86rem; margin-top: 0.4rem;">
+          W opisach na stronie stosowana jest międzynarodowa notacja algebraiczna (angielska), 
+          zgodna z zapisem PGN z serwisów Chess.com oraz Lichess:
+        </p>
+
+        <table class="cheat-table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>Znaczenie w zapisie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>N</td><td>Skoczek (Knight)</td></tr>
+            <tr><td>B</td><td>Goniec (Bishop)</td></tr>
+            <tr><td>R</td><td>Wieża (Rook)</td></tr>
+            <tr><td>Q</td><td>Hetman (Queen)</td></tr>
+            <tr><td>K</td><td>Król (King)</td></tr>
+            <tr><td>x</td><td>Bicie na polu (np. Nxf7)</td></tr>
+            <tr><td>+ / #</td><td>Szach (+) lub mat (#)</td></tr>
+          </tbody>
+        </table>
+      </aside>
+
+      <section class="panel">
+        <h3 style="margin-bottom: 0.3rem;">Formularz kontaktowy</h3>
+        <p style="color: var(--muted); font-size: 0.84rem; margin-bottom: 1.1rem;">Wypełnij wszystkie pola i kliknij Wyślij.</p>
+
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="email">Adres E-Mail</label>
+            <input type="text" id="email" name="email" class="form-control" placeholder="np. gracz@domena.pl" required />
+            <div class="field-error">Wprowadź prawidłowy adres e-mail.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Temat wiadomości</label>
+            <select id="topic" name="topic" class="form-control" required>
+              <option value="" disabled selected>-- Wybierz temat --</option>
+              <option value="partia">Zgłoszenie partii w Alien Gambicie</option>
+              <option value="teoria">Uwagi do analizy otwarcia</option>
+              <option value="pytanie">Pytanie o wariant</option>
+              <option value="inne">Inny temat</option>
+            </select>
+            <div class="field-error">Wybierz temat z listy.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Wiadomość / Zapis PGN</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Wpisz treść wiadomości, link do partii lub zapis PGN..." required></textarea>
+            <div class="field-error">Wiadomość musi mieć minimum 10 znaków.</div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0;">
+            <input type="submit" class="btn btn-primary" style="width: 100%;" value="Wyślij" />
+          </div>
+
+          <div class="form-ok" id="form-ok">
+            <strong>Wiadomość została wysłana.</strong> Formularz przeszedł walidację pomyślnie.
+          </div>
+        </form>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <h4>Alien Gambit &bull; Caro-Kann</h4>
+        <p>Projekt 1: Statyczna strona WWW (Aplikacje Webowe)</p>
+      </div>
+      <div class="footer-right">
+        <span>Autor strony:</span>
+        <strong>Wojciech Kubicz</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

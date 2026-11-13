@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria | Alien Gambit</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Alien Gambit <span>Caro-Kann</span></a>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="gallery.html" class="nav-link active">Galeria</a></li>
+          <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="section-head">
+      <h2>Partia pokazowa i galeria posunięć</h2>
+      <p>Nagranie wideo z partii oraz zestawienie 12 pierwszych ruchów otwarcia.</p>
+    </div>
+
+    <section class="panel video-grid">
+      <video controls poster="assets/board12.png">
+        <source src="assets/Partia_Lepsza.mp4" type="video/mp4" />
+        Twoja przeglądarka nie obsługuje tagu wideo HTML5.
+      </video>
+
+      <div class="game-info">
+        <span class="intro-meta">Partia pokazowa &bull; Blitz &bull; Wynik: 1-0</span>
+        <h3>Volen Dyulgerov (Witty Alien) vs Nicholas Kowalski</h3>
+        <p>
+          Białymi gra twórca i główny popularyzator tego wariantu, bułgarski szachista <strong>Volen Dyulgerov</strong>, 
+          znany w sieci pod pseudonimem <strong>Witty Alien</strong>. Po wczesnym poświęceniu skoczka na f7 białe 
+          forsują kolejne poświęcenie wieży na e6, a partię kończy efektowna ofiara hetmana na h7 i mat skoczkiem w 18. ruchu.
+        </p>
+
+        <div class="pgn-box">
+          <button class="btn" id="copy-pgn">Kopiuj PGN</button>
+          <div id="pgn-text">1. e4 c6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Nf6 5. Ng5 h6 6. Nxf7 Kxf7 7. Nf3 e6 8. Bc4 c5 9. Ne5+ Kg8 10. O-O Nc6 11. Ng6 cxd4 12. Re1 Bd6 13. Rxe6 Bxe6 14. Bxe6+ Kh7 15. Qd3 Rf8 16. Nxf8+ Kh8 17. Qh7+ Nxh7 18. Ng6# 1-0</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Kolejne fazy otwarcia (1–12)</h2>
+        <p>Kliknij dowolną szachownicę, aby zobaczyć powiększenie.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <img src="assets/board1.png" alt="Ruch 1: 1. e4" />
+          <div class="card-body">
+            <div class="card-top"><strong>1. e4</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Otwarcie pionem królewskim.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board2.png" alt="Ruch 2: 1... c6" />
+          <div class="card-body">
+            <div class="card-top"><strong>1... c6</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Obrona Caro-Kann.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board3.png" alt="Ruch 3: 2. d4" />
+          <div class="card-body">
+            <div class="card-top"><strong>2. d4</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Budowa centrum pionowego.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board4.png" alt="Ruch 4: 2... d5" />
+          <div class="card-body">
+            <div class="card-top"><strong>2... d5</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Uderzenie w piona e4.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board5.png" alt="Ruch 5: 3. Nd2" />
+          <div class="card-body">
+            <div class="card-top"><strong>3. Nd2</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Rozwój skoczka i obrona e4.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board6.png" alt="Ruch 6: 3... dxe4" />
+          <div class="card-body">
+            <div class="card-top"><strong>3... dxe4</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Otwarcie centrum wymianą na e4.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board7.png" alt="Ruch 7: 4. Nxe4" />
+          <div class="card-body">
+            <div class="card-top"><strong>4. Nxe4</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Odbicie figurą w centrum.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board8.png" alt="Ruch 8: 4... Nf6" />
+          <div class="card-body">
+            <div class="card-top"><strong>4... Nf6</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Wyprowadzenie skoczka króla.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board9.png" alt="Ruch 9: 5. Ng5" />
+          <div class="card-body">
+            <div class="card-top"><strong>5. Ng5</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Nacisk na punkt f7.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board10.png" alt="Ruch 10: 5... h6" />
+          <div class="card-body">
+            <div class="card-top"><strong>5... h6</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Odganianie skoczka pionem.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board11.png" alt="Ruch 11: 6. Nxf7!" />
+          <div class="card-body">
+            <div class="card-top"><strong style="color: var(--red);">6. Nxf7!</strong><span class="card-side">Białe</span></div>
+            <p class="card-note">Poświęcenie skoczka na f7.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img src="assets/board12.png" alt="Ruch 12: 6... Kxf7" />
+          <div class="card-body">
+            <div class="card-top"><strong>6... Kxf7</strong><span class="card-side">Czarne</span></div>
+            <p class="card-note">Król bije na f7 i traci roszadę.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal" id="img-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <img id="modal-img" src="" alt="Powiększenie szachownicy" />
+      <div class="modal-info">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc" style="color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem;"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <h4>Alien Gambit &bull; Caro-Kann</h4>
+        <p>Projekt 1: Statyczna strona WWW (Aplikacje Webowe)</p>
+      </div>
+      <div class="footer-right">
+        <span>Autor strony:</span>
+        <strong>Wojciech Kubicz</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alien Gambit | Otwarcie szachowe w Obronie Caro-Kann</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Alien Gambit <span>Caro-Kann</span></a>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu">&#9776;</button>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="gallery.html" class="nav-link">Galeria</a></li>
+          <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="intro-grid">
+      <article class="panel">
+        <span class="intro-meta">Obrona Caro-Kann &bull; Wariant gambitowy</span>
+        <h1 class="intro-title">Alien Gambit (6. Nxf7!)</h1>
+        <p>
+          Alien Gambit to agresywne otwarcie przeciwko Obronie Caro-Kann. Zamiast klasycznej, 
+          spokojnej gry pozycyjnej, białe w 6. posunięciu poświęcają skoczka na polu f7. 
+          Celem ofiary jest wyciągnięcie czarnego króla do centrum i pozbawienie go prawa do roszady.
+        </p>
+
+        <div class="moves-strip">
+          <strong>Kolejność ruchów:</strong> 1. e4 c6 &nbsp;2. d4 d5 &nbsp;3. Nd2 dxe4 &nbsp;4. Nxe4 Nf6 &nbsp;5. Ng5 h6 &nbsp;6. Nxf7!? Kxf7
+        </div>
+
+        <div class="btn-row">
+          <a href="#move-viewer" class="btn btn-primary">Przeglądaj 12 ruchów</a>
+          <a href="gallery.html" class="btn">Zobacz partię wideo</a>
+        </div>
+      </article>
+
+      <aside class="panel clock-box" id="chess-clock">
+        <div class="clock-head">
+          <span>Zegar szachowy</span>
+          <span>Blitz 3+0</span>
+        </div>
+
+        <div class="clock-faces">
+          <div class="clock-side active" id="player-white">
+            <div class="clock-label">Białe</div>
+            <div class="clock-digits" id="time-white">3:00</div>
+          </div>
+          <div class="clock-side" id="player-black">
+            <div class="clock-label">Czarne</div>
+            <div class="clock-digits" id="time-black">3:00</div>
+          </div>
+        </div>
+
+        <div class="clock-actions">
+          <button class="btn" id="clock-start">Start</button>
+          <button class="btn" id="clock-switch">Zmień gracza</button>
+          <button class="btn" id="clock-reset">Reset</button>
+        </div>
+      </aside>
+    </section>
+
+    <section id="move-viewer" class="panel" style="margin-bottom: 2rem;">
+      <div class="section-head">
+        <h2>Pierwsze 12 ruchów otwarcia</h2>
+        <p>Użyj przycisków, strzałek na klawiaturze lub kliknij wybrany ruch z listy poniżej.</p>
+      </div>
+
+      <div class="viewer-grid">
+        <div class="board-frame">
+          <img id="board-img" src="assets/board1.png" alt="Szachownica Alien Gambit" />
+          <div id="sac-tag" class="sac-tag">Ofiara skoczka</div>
+        </div>
+
+        <div class="viewer-info">
+          <div class="step-bar">
+            <span class="step-count" id="step-count">Ruch 1 z 12</span>
+            <span class="step-ply" id="ply-text">1. e4</span>
+          </div>
+
+          <div class="step-note">
+            <h3 id="step-title">1. e4 - Otwarcie pionem królewskim</h3>
+            <p id="step-desc">Zajęcie centrum i otwarcie przekątnych dla gońca oraz hetmana.</p>
+          </div>
+
+          <div class="moves-grid" id="moves-grid"></div>
+
+          <div class="btn-row">
+            <button class="btn" id="btn-prev">Poprzedni</button>
+            <button class="btn btn-primary" id="btn-auto">Autoodtwarzanie</button>
+            <button class="btn" id="btn-next">Następny</button>
+            <button class="btn" id="btn-reset">Od początku</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Główne założenia debiutu</h2>
+        <p>Dlaczego poświęcenie figury w 6. ruchu bywa skuteczne mimo straty materialnej.</p>
+      </div>
+
+      <div class="theory-grid">
+        <article class="panel theory-card">
+          <h3>1. Odkryty król</h3>
+          <p>
+            Po 6. Nxf7 Kxf7 król czarnych traci roszadę i stoi na polu f7, gdzie przeszkadza 
+            w wyprowadzeniu własnych figur i jest narażony na szachy.
+          </p>
+        </article>
+
+        <article class="panel theory-card">
+          <h3>2. Szybki atak białych</h3>
+          <p>
+            Białe bez problemu rozwijają figury ruchami Nf3, Bc4+ oraz Ne5+, 
+            wykorzystując otwarte linie do bezpośredniego natarcia na króla.
+          </p>
+        </article>
+
+        <article class="panel theory-card">
+          <h3>3. Presja czasu</h3>
+          <p>
+            Komputery potrafią obronić pozycję czarnych, ale w partiach szybkich (blitz i bullet) 
+            obrońca ma mało czasu na znalezienie dokładnych posunięć.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-left">
+        <h4>Alien Gambit &bull; Caro-Kann</h4>
+        <p>Projekt 1: Statyczna strona WWW (Aplikacje Webowe)</p>
+      </div>
+      <div class="footer-right">
+        <span>Autor strony:</span>
+        <strong>Wojciech Kubicz</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
