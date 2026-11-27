@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ćwiczenie 3: Produkty z API</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .filtry { margin-bottom: 14px; display: flex; gap: 10px; }
+    input, select { padding: 6px 10px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    img { width: 80px; height: auto; display: block; }
+  </style>
+</head>
+<body>
+  <div class="filtry">
+    <input type="text" id="szukaj" placeholder="Filtruj po frazie...">
+    <select id="sortuj">
+      <option value="oryginalna">oryginalna kolejność</option>
+      <option value="rosnaco">rosnąco</option>
+      <option value="malejaco">malejąco</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Zdjęcie</th>
+        <th>Tytuł</th>
+        <th>Opis</th>
+      </tr>
+    </thead>
+    <tbody id="tabelaBody"></tbody>
+  </table>
+
+  <script>
+    let oryginalneProdukty = [];
+    const szukajInput = document.getElementById("szukaj");
+    const sortujSelect = document.getElementById("sortuj");
+    const tabelaBody = document.getElementById("tabelaBody");
+
+    function wyswietlProdukty(lista) {
+      tabelaBody.innerHTML = "";
+
+      lista.forEach((produkt) => {
+        const tr = document.createElement("tr");
+
+        const tdImg = document.createElement("td");
+        const img = document.createElement("img");
+        img.src = produkt.thumbnail;
+        img.alt = produkt.title;
+        tdImg.appendChild(img);
+
+        const tdTitle = document.createElement("td");
+        tdTitle.textContent = produkt.title;
+
+        const tdDesc = document.createElement("td");
+        tdDesc.textContent = produkt.description;
+
+        tr.appendChild(tdImg);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdDesc);
+        tabelaBody.appendChild(tr);
+      });
+    }
+
+    function aktualizujWidok() {
+      const fraza = szukajInput.value.toLowerCase().trim();
+      const trybSortowania = sortujSelect.value;
+
+      let przefiltrowane = oryginalneProdukty.filter((p) =>
+        p.title.toLowerCase().includes(fraza) ||
+        p.description.toLowerCase().includes(fraza)
+      );
+
+      if (trybSortowania === "rosnaco") {
+        przefiltrowane.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (trybSortowania === "malejaco") {
+        przefiltrowane.sort((a, b) => b.title.localeCompare(a.title));
+      }
+
+      wyswietlProdukty(przefiltrowane);
+    }
+
+    async function pobierzDane() {
+      const odpowiedz = await fetch("https://dummyjson.com/products");
+      const dane = await odpowiedz.json();
+      oryginalneProdukty = dane.products.slice(0, 30);
+      aktualizujWidok();
+    }
+
+    szukajInput.addEventListener("input", aktualizujWidok);
+    sortujSelect.addEventListener("change", aktualizujWidok);
+
+    pobierzDane();
+  </script>
+</body>
+</html>

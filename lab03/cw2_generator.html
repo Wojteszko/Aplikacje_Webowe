@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ćwiczenie 2: Generator haseł</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; line-height: 1.8; }
+    label { display: block; }
+    button { margin-top: 10px; padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <label>Minimalna długość hasła: <input type="text" id="minLen" value="8"></label>
+  <label>Maksymalna długość hasła: <input type="text" id="maxLen" value="14"></label>
+  <label><input type="checkbox" id="wielkie"> Czy hasło ma zawierać wielkie litery?</label>
+  <label><input type="checkbox" id="specjalne"> Czy hasło ma zawierać znaki specjalne?</label>
+  <button id="generujBtn">Wygeneruj hasło</button>
+
+  <script>
+    const maleZnaki = "abcdefghijklmnopqrstuvwxyz0123456789";
+    const wielkieZnaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const znakiSpecjalne = "!@#$%^&*()-_=+[]{};:,.<>?";
+
+    function losujZnak(zestaw) {
+      return zestaw[Math.floor(Math.random() * zestaw.length)];
+    }
+
+    document.getElementById("generujBtn").addEventListener("click", () => {
+      const min = parseInt(document.getElementById("minLen").value, 10);
+      const max = parseInt(document.getElementById("maxLen").value, 10);
+      const czyWielkie = document.getElementById("wielkie").checked;
+      const czySpecjalne = document.getElementById("specjalne").checked;
+
+      if (isNaN(min) || isNaN(max) || min <= 0 || max < min) {
+        alert("Podaj poprawne długości hasła (min > 0, max >= min).");
+        return;
+      }
+
+      const dlugosc = Math.floor(Math.random() * (max - min + 1)) + min;
+      let pula = maleZnaki;
+      const wynik = [];
+
+      if (czyWielkie) {
+        pula += wielkieZnaki;
+        wynik.push(losujZnak(wielkieZnaki));
+      }
+      if (czySpecjalne) {
+        pula += znakiSpecjalne;
+        wynik.push(losujZnak(znakiSpecjalne));
+      }
+
+      while (wynik.length < dlugosc) {
+        wynik.push(losujZnak(pula));
+      }
+
+      // Krótkie przetasowanie, aby wymuszone znaki nie były zawsze na początku
+      wynik.sort(() => Math.random() - 0.5);
+      alert("Wygenerowane hasło: " + wynik.slice(0, dlugosc).join(""));
+    });
+  </script>
+</body>
+</html>

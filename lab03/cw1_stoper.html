@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ćwiczenie 1: Stoper</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    #czas { font-size: 2rem; margin-bottom: 12px; }
+    button { padding: 8px 16px; margin-right: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="czas">0s</div>
+  <button id="startBtn">start</button>
+  <button id="stopBtn">stop</button>
+  <button id="resetBtn">reset</button>
+
+  <script>
+    let sekundy = 0;
+    let timer = null;
+
+    const wyswietlacz = document.getElementById("czas");
+
+    function aktualizujWidok() {
+      if (sekundy < 60) {
+        wyswietlacz.textContent = sekundy + "s";
+      } else {
+        const min = Math.floor(sekundy / 60);
+        const sek = sekundy % 60;
+        wyswietlacz.textContent = min + "min " + sek + "s";
+      }
+    }
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      if (timer !== null) return;
+      timer = setInterval(() => {
+        sekundy++;
+        aktualizujWidok();
+      }, 1000);
+    });
+
+    document.getElementById("stopBtn").addEventListener("click", () => {
+      clearInterval(timer);
+      timer = null;
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      clearInterval(timer);
+      timer = null;
+      sekundy = 0;
+      aktualizujWidok();
+    });
+  </script>
+</body>
+</html>

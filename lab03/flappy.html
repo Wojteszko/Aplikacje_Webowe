@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Flappy Bird - Lab 3</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    .game-box {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      image-rendering: pixelated;
+    }
+    #gameOverPanel {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      width: 260px;
+      background: rgba(255, 248, 220, 0.95);
+      border: 3px solid #543847;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    #gameOverPanel h3 {
+      margin: 0 0 8px;
+      color: #d9534f;
+    }
+    #gameOverPanel p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+    #topScores {
+      text-align: left;
+      margin: 8px auto;
+      padding-left: 22px;
+      font-size: 13px;
+    }
+    #restartBtn {
+      margin-top: 8px;
+      padding: 8px 16px;
+      font-weight: bold;
+      background: #73bf2e;
+      color: #fff;
+      border: 2px solid #543847;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-box">
+    <canvas id="gameCanvas" width="864" height="512"></canvas>
+
+    <div id="gameOverPanel">
+      <h3 id="congratsText" style="display:none; color:#2e8b57;">Gratulacje! Nowy rekord!</h3>
+      <p>Wynik: <strong id="currentScore">0</strong></p>
+      <p>Najlepszy wynik: <strong id="bestScore">0</strong></p>
+      <p>Poprzednia gra: <strong id="prevScore">0</strong></p>
+      <p><strong>Top 5 wyników:</strong></p>
+      <ol id="topScores"></ol>
+      <button id="restartBtn">Zagraj ponownie</button>
+    </div>
+  </div>
+
+  <script src="flappy.js"></script>
+</body>
+</html>
